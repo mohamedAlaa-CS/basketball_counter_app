@@ -198,7 +198,27 @@ class HomePage extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(8),
-                    primary: Colors.orange,
+                    backgroundColor: Colors.orange,
+                    minimumSize: Size(150, 50),
+                  ),
+                  onPressed: () {
+                    BlocProvider.of<CounterCubit>(context)
+                        .teamIncrement(team: 'A', buttonNumber: 0);
+
+                    BlocProvider.of<CounterCubit>(context).restart();
+                  },
+                  child: Text(
+                    'Result',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.all(8),
+                    backgroundColor: Colors.orange,
                     minimumSize: Size(150, 50),
                   ),
                   onPressed: () {
