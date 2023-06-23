@@ -4,6 +4,7 @@ import 'Counter_State.dart';
 
 class CounterCubit extends Cubit<CounterState>{
   CounterCubit() : super(teamAIncreamentState());
+  static  get(context)=> BlocProvider.of<CounterCubit>(context);
 
 int teamAPoint = 0;
 int teamBPoint = 0;
@@ -22,4 +23,7 @@ void restart(){
   teamAPoint =0;
   teamBPoint =0;
 }
+
+
+
 }
